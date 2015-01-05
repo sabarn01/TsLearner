@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="app.js" > </script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module('PubSub', []);
+        myApp.controller("myAppControler", ['$scope', function ($scope) {
+            $scope.testResults = PubSubTests.TestPubSub();
+            $scope.ReRunTests = function () {
+                PubSubTests.TestPubSub();
+            }
+        }]);
+    </script>   
+    <style>
+        .test_error {background-color : red}
+        #ResTable {border: 1px solid black ; border-collapse: collapse;}
+        td {border : 1px solid black}
+    </style> 
+</head>
+<body ng-app="PubSub">
+    
+    <div ng-controller="myAppControler">
+    
+       <table id="ResTable">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Result</td>
+                    <td>Elasped Time</td>
+                    <td>Error Msg</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="test in testResults" class="{{test.Result ? 'test_good' : 'test_error'}}">
+                    <td>{{test.Name}}</td> 
+                    <td>{{test.Result}}</td>
+                    <td>{{test.ElaspedTime}}ms</td>
+                    <td>{{test.Error}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <input type="submit" ng-click="ReRunTests()"></td>
+                </tr>
+            </tfoot> 
+        </table>           
+    </div>
+</body>
+</html>

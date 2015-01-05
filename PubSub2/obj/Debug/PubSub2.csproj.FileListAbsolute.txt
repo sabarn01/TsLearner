@@ -1,0 +1,6 @@
+c:\users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\bin\PubSub2.dll.config
+c:\users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\bin\PubSub2.dll
+c:\users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\bin\PubSub2.pdb
+c:\users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\obj\Debug\PubSub2.dll
+c:\users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\obj\Debug\PubSub2.pdb
+C:\Users\abarnett\documents\visual studio 2013\Projects\PubSub2\PubSub2\obj\Debug\PubSub2.csprojResolveAssemblyReference.cache
