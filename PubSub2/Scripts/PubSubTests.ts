@@ -23,11 +23,24 @@ module PubSubTests {
             var callback = (message: any) => {
                 CallCount++;
             };
-            queue.AddSubscription("test", callback);
+            queue.AddSubscription("test", callback); 
             queue.AddSubscription("test", callback); 
             queue.Publish("test", { foo: 'hi' });
 
             return CallCount === 2;
+        }
+
+        public TestSubDelete(): boolean {
+            var queue = new PubSub.PubSubQueue();
+            var called = false;
+            var callback = (message: any) => {
+                called = true;
+            };
+            queue.AddSubscription("test", callback);
+            queue.RemoveSubScription(callback); 
+            queue.Publish("test", { foo: 'hi' });
+
+            return called === false;
         }
     }
 
