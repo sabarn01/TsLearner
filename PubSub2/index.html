@@ -1,11 +1,31 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script src="app.js"> </script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="Scripts/PubSub.js">  </script>
+    <script src="Scripts/TsTest.js"> </script>
+    <script src="Scripts/PubSubTests.js"></script>
+    <script src="Scripts/Customer.js"></script>
+    <script src="Scripts/App.js"></script>
     <title></title>
 </head>
-<body>
+<body ng-app="App" >
+    <div ng-controller="Customers" style="border : 1px solid black; width :49%; float : left" >
+        <h1>Customers </h1>
+        <div ng-repeat="cust in customers" >
+            {{cust.firstName}}
+            {{cust.lastName}}
+            {{cust.homePhone}}
+        </div>
+    </div>
+    <div ng-controller="AddCustomers" style="border : 1px solid black;width : 49%; float : left">
+        <div>
+            First Name&nbsp;: <input type="text" ng-model="firstName" />
+            Last Name&nbsp;: <input type="text" ng-model="lastName" />
+            Home Phone&nbsp; <input type="text" ng-model="homePhone" />
+            <input type="submit" ng-click="NewCustomer()" />
+        </div>
+    </div>
 
 </body>
 </html>
